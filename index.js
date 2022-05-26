@@ -25,7 +25,7 @@ figmaApi.prototype.get = async function (api, params) {
 
 // For each nodeId, find its corresponding node by searching the document.
 // Note this is pretty inefficient, we can end up traversing the entire document quite a few times. Likely insignificant on smallish documents.
-findNodesById = function ({ file, nodeIds }) {
+const findNodesById = function ({ file, nodeIds }) {
     function findNode(nodeId, searchNode) {
         if (nodeId === searchNode.id) {
             return searchNode;
@@ -40,7 +40,7 @@ findNodesById = function ({ file, nodeIds }) {
     return nodeIds.map((nodeId) => findNode(nodeId, file.document));
 };
 
-findNodeIdsForNames = function ({ file, names }) {
+const findNodeIdsForNames = function ({ file, names }) {
     // find node IDs for names with a depth-first search
     function findNameInNode(name, node) {
         if (name === node.name && node.type === 'FRAME') {
