@@ -178,8 +178,8 @@ async function loadStoredFigmassets({ map, path = '' }) {
     }
 }
 
-module.exports = {
-    getFigmaIconsByFrames: getFigmassets,
+export {
+    getFigmassets as getFigmaIconsByFrames,
     getFigmassets,
     addAssetsToMap,
     loadFigmassets,
