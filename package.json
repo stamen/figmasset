@@ -2,9 +2,9 @@
     "name": "figmasset",
     "description": "Easily fetch a bunch of assets from Figma for possible use in a Mapbox GL JS map.",
     "author": {
-        "name": "Steve Bennett",
-        "email": "stevage@gmail.com",
-        "url": "https://stevebennett.me"
+        "name": "Stamen Design",
+        "email": "info@stamen.com",
+        "url": "https://stamen.com"
     },
     "keywords": [
         "figma",
