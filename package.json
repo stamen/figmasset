@@ -6,6 +6,11 @@
         "email": "info@stamen.com",
         "url": "https://stamen.com"
     },
+    "license": "MIT",
+    "module": "./index.js",
+    "exports": {
+        ".": "./index.js"
+    },
     "keywords": [
         "figma",
         "mapbox",
