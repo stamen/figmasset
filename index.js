@@ -138,29 +138,48 @@ async function getFigmassets({
     return await getAssetImages({ api, fileKey, assetList, scales, format });
 }
 
-function addAssetsToMap(map, assets) {
-    for (const iconId of Object.keys(assets)) {
-        const scale = Math.max(
-            ...Object.keys(assets[iconId])
-                .filter((k) => k[0] === '@')
-                .map((k) => +k.replace(/[^0-9.]/g, ''))
-        );
-        map.loadImage(assets[iconId][`@${scale}x`], (error, image) => {
+function getScale(asset) {
+    return Math.max(
+        ...Object.keys(asset)
+            .filter((k) => k[0] === '@')
+            .map((k) => +k.replace(/[^0-9.]/g, ''))
+    );
+}
+
+async function addAssetToMap(map, iconId, asset, options = {}) {
+    const { replace } = options;
+    const scale = getScale(asset);
+
+    if (replace && map.hasImage(iconId)) {
+        map.removeImage(iconId);
+    }
+
+    return new Promise((resolve, reject) => {
+        map.loadImage(asset[`@${scale}x`], (error, image) => {
+            if (error) return reject(error);
             map.addImage(iconId, image, {
                 pixelRatio: scale,
             });
+            resolve();
         });
-    }
+    });
 }
 
-async function loadFigmassets({ map, ...otherArgs }) {
+async function addAssetsToMap(map, assets, options = {}) {
+    return Promise.all(
+        Object.entries(assets)
+            .map(([iconId, asset]) => addAssetToMap(map, iconId, asset, options))
+    );
+}
+
+async function loadFigmassets({ map, replace = false, ...otherArgs }) {
     if (map && !otherArgs.scales) {
         // makes sense to load map assets at 2x
         otherArgs.scales = [2];
     }
     const assets = await getFigmassets(otherArgs);
     if (map) {
-        addAssetsToMap(map, assets);
+        await addAssetsToMap(map, assets, { replace });
     }
     return assets;
 }
