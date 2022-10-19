@@ -20,7 +20,7 @@
         "maplibre-gl-js",
         "design"
     ],
-    "version": "0.1.7",
+    "version": "0.1.8",
     "main": "index.js",
     "files": [
         "index.js",
