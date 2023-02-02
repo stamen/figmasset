@@ -2,7 +2,7 @@
 
 Figmasset is a tool to facilitate bulk-loading assets from Figma into a JavaScript application. This makes it easy to load the latest version of assets under active development, including map marker icons, mockup UI overlays, legend images etc. Which means designers can iterate on assets, without needing developers to keep saving the latest copy of assets and redeploying.
 
-Read more on our blog: "[Figmasset: reducing design friction while making map markers](https://hi.stamen.com/figmasset-reducing-design-friction-while-making-map-markers-ea2d90cb061d)"
+Read more on our blog: "[Figmasset: reducing design friction while making map markers](https://hi.stamen.com/figmasset-reducing-design-friction-while-making-map-markers-ea2d90cb061d)" and check out our more recent presentation at NACIS: "[Figmasset: A Missing Map Tool](https://www.youtube.com/watch?v=cxEquZj9T4Q)"
 
 Figmasset supports loading assets from several different frames in the same file. Assets loaded later will override earlier assets if they share a name.
 
