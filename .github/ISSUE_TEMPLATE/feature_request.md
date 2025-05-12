@@ -1,10 +1,9 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
-title: ''
+title: ""
 labels: enhancement
-assignees: ''
-
+assignees: ""
 ---
 
 <!-- Note: please make sure not to mention any sensitive client information here, as this repo is public. Best practice is to link to this public issue in your private client/project repo so you can keep track of progress here alongside helpful client context. -->

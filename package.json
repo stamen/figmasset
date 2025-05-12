@@ -1,33 +1,41 @@
 {
-    "name": "figmasset",
-    "description": "Easily fetch a bunch of assets from Figma for possible use in a Mapbox GL JS map.",
-    "author": {
-        "name": "Stamen Design",
-        "email": "info@stamen.com",
-        "url": "https://stamen.com"
-    },
-    "license": "MIT",
-    "module": "./index.js",
-    "exports": {
-        ".": "./index.js"
-    },
-    "keywords": [
-        "figma",
-        "mapbox",
-        "icon",
-        "asset",
-        "mapbox-gl-js",
-        "maplibre-gl-js",
-        "design"
-    ],
-    "version": "0.1.8",
-    "main": "index.js",
-    "files": [
-        "index.js",
-        "layout.png"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/stamen/figmasset"
-    }
+  "name": "figmasset",
+  "description": "Easily fetch a bunch of assets from Figma for possible use in a Mapbox GL JS map.",
+  "author": {
+    "name": "Stamen Design",
+    "email": "info@stamen.com",
+    "url": "https://stamen.com"
+  },
+  "license": "MIT",
+  "module": "./index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "keywords": [
+    "figma",
+    "mapbox",
+    "icon",
+    "asset",
+    "mapbox-gl-js",
+    "maplibre-gl-js",
+    "design"
+  ],
+  "version": "0.1.8",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "layout.png"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stamen/figmasset"
+  },
+  "dependencies": {
+    "prettier": "^3.5.3"
+  },
+  "devDependencies": {
+    "lint-staged": "^15.5.1",
+    "pretty-quick": "^4.1.1",
+    "simple-git-hooks": "^2.12.1"
+  }
 }

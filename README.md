@@ -23,7 +23,6 @@ In Figma, arrange your assets as top-level children under one or more frames. Th
 
 ![](layout.png)
 
-
 ```
 # pins
   # pin
@@ -39,9 +38,9 @@ In Figma, arrange your assets as top-level children under one or more frames. Th
 
 Naming:
 
-* Top-level frame names should not contain spaces or commas.
-* Top-level frame names are *not* case-sensitive.
-* Asset names *are* case-sensitive. We recommend lower-case.
+- Top-level frame names should not contain spaces or commas.
+- Top-level frame names are _not_ case-sensitive.
+- Asset names _are_ case-sensitive. We recommend lower-case.
 
 Get the file key from the URL. Given a URL like https://www.figma.com/file/ABC123/Untitled?node-id=0%3A1, "ABC123" is your file key.
 
@@ -50,24 +49,24 @@ Get the file key from the URL. Given a URL like https://www.figma.com/file/ABC12
 To retrieve your assets as icons and load them into a map, use `loadFigmassets()`, like this:
 
 ```js
-import { loadFigmassets } from 'figmasset';
+import { loadFigmassets } from "figmasset";
 
 //...
 
 loadFigmassets({
   map, // Mapbox GL JS or Maplibre GL JS object
-  frameNames: ['pins', 'pins-alt-clustering'],
-  fileKey: 'ABC123',
-  personalAccessToken: 'snt34h5sn24h5', // get this from your user > Settings page. Be careful who you expose this to, it provides unrestricted access to your account
+  frameNames: ["pins", "pins-alt-clustering"],
+  fileKey: "ABC123",
+  personalAccessToken: "snt34h5sn24h5", // get this from your user > Settings page. Be careful who you expose this to, it provides unrestricted access to your account
   scales: [2], // pixel ratios. [1,2] fetches both @1x and @2x versions of each asset.
 });
 
 // you can now access your icon like this:
 map.addLayer({
-  id: 'mypin',
-  type: 'symbol',
-  source: 'pointsource',
-  layout: { 'icon-image': 'pin' }
+  id: "mypin",
+  type: "symbol",
+  source: "pointsource",
+  layout: { "icon-image": "pin" },
 });
 ```
 
@@ -111,7 +110,6 @@ The Figma API can take a few seconds to generate PNG versions of assets. Once it
 
 Note that the assets named `pin-cluster` and `pin-cluster-selected` in the `pins-alt-clustering` frame will be used, rather than those in `pins`. That's because the names match, and `pins-alt-clustering` was specified after `pins`.
 
-
 ### Moving to production
 
 #### loadStoredFigmassets
@@ -130,7 +128,7 @@ npx figmasset-export --file ABC123  --token snt34h5sn24h5 --frame 'pins,pins-alt
 2. Switch out the `loadFigmassets()` call above with `loadStoredFigmassets()` like this:
 
 ```js
-loadStoredFigmassets({ map, path: 'static/assets@2x' });
+loadStoredFigmassets({ map, path: "static/assets@2x" });
 ```
 
 #### Generate a spritesheet
